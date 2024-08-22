@@ -1,4 +1,4 @@
 pandas==2.2.2
-plotly.graph_objects==5.22.0
+plotly==5.22.0
 streamlit_elements==0.1.0
 
