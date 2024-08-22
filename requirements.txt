@@ -1,6 +1,4 @@
 pandas==2.2.2
-time
 plotly.graph_objects==5.22.0
-pandas.api.types
 streamlit_elements==0.1.0
-pathlib
+
