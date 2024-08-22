@@ -1,0 +1,7 @@
+pandas
+streamlit-aunthenticator
+time
+plotly.graph_objects
+pandas.api.types
+streamlit_elements
+pathlib
