@@ -169,7 +169,7 @@ with elements("demo"):
                     borderWidth=1,
                     borderColor={"from": "color", "modifiers": [["darker", 0.2]]},
                     arcLinkLabelsSkipAngle=10,
-                    arcLinkLabelsTextColor="#FFFFFF",
+                    arcLinkLabelsTextColor="#141414",
                     arcLinkLabelsThickness=2,
                     arcLinkLabelsColor={"from": "color"},
                     arcLabelsSkipAngle=10,
