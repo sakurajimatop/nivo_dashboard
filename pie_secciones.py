@@ -333,7 +333,7 @@ with elements("demo"):
             # To make this header draggable, we just need to set its classname to 'draggable',
             # as defined above in dashboard.Grid's draggableHandle.
 
-            mui.CardHeader(title="Sales Executive ranking evolution", className="draggable")
+            mui.CardHeader(title="Gross Margin", className="draggable")
 
             # Like above, we want to make our content grow and shrink as the user resizes the card,
             # by setting flex to 1 and minHeight to 0.
@@ -448,7 +448,7 @@ with elements("demo"):
             # To make this header draggable, we just need to set its classname to 'draggable',
             # as defined above in dashboard.Grid's draggableHandle.
 
-            mui.CardHeader(title="Gross Margin", className="draggable")
+            mui.CardHeader(title="Sales Executive ranking evolution", className="draggable")
 
             # Like above, we want to make our content grow and shrink as the user resizes the card,
             # by setting flex to 1 and minHeight to 0.
