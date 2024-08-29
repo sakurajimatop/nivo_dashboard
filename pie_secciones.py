@@ -11,23 +11,121 @@ import pandas as pd
 from streamlit_elements import elements, dashboard, mui, nivo
 import streamlit as st
 
+
+# por mejorar
+
+# el color de las letras de los ejes no se ve en el dark mode
+# el color de las letras del pie chart no se ve en el light mode
+# agregar dos gráficos interesantes más:
+    # algún mapa
+    # average profit shipment
+    
+
+
 st.set_page_config(layout="wide")
 # As for Streamlit Elements, we will need all these objects.
 # All available objects and there usage are listed there: https://github.com/okld/streamlit-elements#getting-started
-# data_chart = [
-#     {'month': 'Jan', '2023': 67481.0911, '2024': 90932.1748},
-#     {'month': 'Feb', '2023': 81507.061, '2024': 61093.6023},
-#     {'month': 'Mar', '2023': 58702.8501, '2024': 98382.9113},
-#     {'month': 'Apr', '2023': 62765.6294, '2024': 59867.3839},
-#     {'month': 'May', '2023': 87234.2837, '2024': 72091.0803},
-#     {'month': 'Jun', '2023': 56460.1538, '2024': 71122.3589},
-#     {'month': 'Jul', '2023': 60003.0174, '2024': 52803.1782},
-#     {'month': 'Aug', '2023': 65351.9784, '2024': None},  # Assuming no data for 2024
-#     {'month': 'Sep', '2023': 61903.8176, '2024': None},  # Assuming no data for 2024
-#     {'month': 'Oct', '2023': 68346.8672, '2024': None},  # Assuming no data for 2024
-#     {'month': 'Nov', '2023': 74664.7885, '2024': None},  # Assuming no data for 2024
-#     {'month': 'Dec', '2023': 81740.1852, '2024': None},  # Assuming no data for 2024
-# ]
+bump_chart_data = [{'id': 'Brady Wells',
+  'data': [{'x': 202301, 'y': 5299},
+   {'x': 202302, 'y': 7162},
+   {'x': 202303, 'y': 6116},
+   {'x': 202304, 'y': 7011},
+   {'x': 202305, 'y': 5952},
+   {'x': 202306, 'y': 7404},
+   {'x': 202307, 'y': 3455},
+   {'x': 202308, 'y': 858},
+   {'x': 202309, 'y': 4728},
+   {'x': 202310, 'y': 6755},
+   {'x': 202311, 'y': 2720},
+   {'x': 202312, 'y': 10626},
+   {'x': 202401, 'y': 8691},
+   {'x': 202402, 'y': 7834},
+   {'x': 202403, 'y': 17607},
+   {'x': 202404, 'y': 726},
+   {'x': 202405, 'y': 1541},
+   {'x': 202406, 'y': 11052},
+   {'x': 202407, 'y': 3983}]},
+ {'id': 'Brenda Koch',
+  'data': [{'x': 202301, 'y': 11494},
+   {'x': 202302, 'y': 14208},
+   {'x': 202303, 'y': 10888},
+   {'x': 202304, 'y': 7606},
+   {'x': 202305, 'y': 17404},
+   {'x': 202306, 'y': 4293},
+   {'x': 202307, 'y': 8382},
+   {'x': 202308, 'y': 9933},
+   {'x': 202309, 'y': 2721},
+   {'x': 202310, 'y': 6810},
+   {'x': 202311, 'y': 7030},
+   {'x': 202312, 'y': 239},
+   {'x': 202401, 'y': 15497},
+   {'x': 202402, 'y': 2300},
+   {'x': 202403, 'y': 6061},
+   {'x': 202404, 'y': 7650},
+   {'x': 202405, 'y': 9678},
+   {'x': 202406, 'y': 13739},
+   {'x': 202407, 'y': 7649}]},
+ {'id': 'Joseph Jordan',
+  'data': [{'x': 202301, 'y': 6349},
+   {'x': 202302, 'y': 13921},
+   {'x': 202303, 'y': 5442},
+   {'x': 202304, 'y': 8214},
+   {'x': 202305, 'y': 4063},
+   {'x': 202306, 'y': 9016},
+   {'x': 202307, 'y': 12266},
+   {'x': 202308, 'y': 7591},
+   {'x': 202309, 'y': 13267},
+   {'x': 202310, 'y': 10149},
+   {'x': 202311, 'y': 9351},
+   {'x': 202312, 'y': 18681},
+   {'x': 202401, 'y': 13216},
+   {'x': 202402, 'y': 8435},
+   {'x': 202403, 'y': 7942},
+   {'x': 202404, 'y': 11473},
+   {'x': 202405, 'y': 10099},
+   {'x': 202406, 'y': 6740},
+   {'x': 202407, 'y': 6088}]},
+ {'id': 'Michael Scott DDS',
+  'data': [{'x': 202301, 'y': 3120},
+   {'x': 202302, 'y': 9619},
+   {'x': 202303, 'y': 5676},
+   {'x': 202304, 'y': 9083},
+   {'x': 202305, 'y': 13643},
+   {'x': 202306, 'y': 7696},
+   {'x': 202307, 'y': 4126},
+   {'x': 202308, 'y': 9561},
+   {'x': 202309, 'y': 9127},
+   {'x': 202310, 'y': 9405},
+   {'x': 202311, 'y': 10991},
+   {'x': 202312, 'y': 9630},
+   {'x': 202401, 'y': 7145},
+   {'x': 202402, 'y': 6995},
+   {'x': 202403, 'y': 14038},
+   {'x': 202404, 'y': 10980},
+   {'x': 202405, 'y': 10584},
+   {'x': 202406, 'y': 6134},
+   {'x': 202407, 'y': 9658}]},
+ {'id': 'Ryan Camacho',
+  'data': [{'x': 202301, 'y': 20177},
+   {'x': 202302, 'y': 15668},
+   {'x': 202303, 'y': 17488},
+   {'x': 202304, 'y': 19733},
+   {'x': 202305, 'y': 22956},
+   {'x': 202306, 'y': 13376},
+   {'x': 202307, 'y': 15505},
+   {'x': 202308, 'y': 13693},
+   {'x': 202309, 'y': 16203},
+   {'x': 202310, 'y': 17262},
+   {'x': 202311, 'y': 23867},
+   {'x': 202312, 'y': 13005},
+   {'x': 202401, 'y': 10696},
+   {'x': 202402, 'y': 12044},
+   {'x': 202403, 'y': 22262},
+   {'x': 202404, 'y': 16247},
+   {'x': 202405, 'y': 18864},
+   {'x': 202406, 'y': 15475},
+   {'x': 202407, 'y': 11695}]}]
+
 
 df = pd.read_csv(
     "shipments.csv",
@@ -74,7 +172,7 @@ for entry in bar_chart_data:
             item[year] = gross_margin
 
 
-df_margin = df[['Gross Margin', ]]
+
 
 
 
@@ -235,7 +333,7 @@ with elements("demo"):
             # To make this header draggable, we just need to set its classname to 'draggable',
             # as defined above in dashboard.Grid's draggableHandle.
 
-            mui.CardHeader(title="Gross Margin", className="draggable")
+            mui.CardHeader(title="Sales Executive ranking evolution", className="draggable")
 
             # Like above, we want to make our content grow and shrink as the user resizes the card,
             # by setting flex to 1 and minHeight to 0.
@@ -345,3 +443,66 @@ with elements("demo"):
                             ariaLabel="Nivo bar chart demo",
                             barAriaLabel=lambda e: f"{e['id']}: {e['formattedValue']} in country: {e['indexValue']}"
                         )
+        with mui.Card(key="media", sx={"display": "flex", "flexDirection": "column"}):
+
+            # To make this header draggable, we just need to set its classname to 'draggable',
+            # as defined above in dashboard.Grid's draggableHandle.
+
+            mui.CardHeader(title="Gross Margin", className="draggable")
+
+            # Like above, we want to make our content grow and shrink as the user resizes the card,
+            # by setting flex to 1 and minHeight to 0.
+
+            with mui.CardContent(sx={"flex": 1, "minHeight": 600}):
+                with mui.Box(sx={"height": 500}):
+                    nivo.AreaBump(
+                        data=bump_chart_data,
+                        margin={"top": 40, "right": 100, "bottom": 40, "left": 100},
+                        spacing=8,
+                        colors={"scheme": "nivo"},
+                        blendMode="multiply",
+                        defs=[
+                            {
+                                "id": "dots",
+                                "type": "patternDots",
+                                "background": "inherit",
+                                "color": "#38bcb2",
+                                "size": 4,
+                                "padding": 1,
+                                "stagger": True
+                            },
+                            {
+                                "id": "lines",
+                                "type": "patternLines",
+                                "background": "inherit",
+                                "color": "#eed312",
+                                "rotation": -45,
+                                "lineWidth": 6,
+                                "spacing": 10
+                            }
+                        ],
+                        fill=[
+                            {"match": {"id": "CoffeeScript"}, "id": "dots"},
+                            {"match": {"id": "TypeScript"}, "id": "lines"}
+                        ],
+                        startLabel="id",
+                        endLabel="id",
+                        axisTop={
+                            "tickSize": 5,
+                            "tickPadding": 5,
+                            "tickRotation": 0,
+                            "legend": "",
+                            "legendPosition": "middle",
+                            "legendOffset": -36,
+                            "truncateTickAt": 0
+                        },
+                        axisBottom={
+                            "tickSize": 5,
+                            "tickPadding": 5,
+                            "tickRotation": 0,
+                            "legend": "",
+                            "legendPosition": "middle",
+                            "legendOffset": 32,
+                            "truncateTickAt": 0
+                        }
+                    )
